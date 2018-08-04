@@ -1,4 +1,7 @@
-FROM centos
-RUN yum -y update
-RUN yum install -y vim
-RUN echo "hello docker"
+FROM python:3.6.6-alpine
+RUN pip install flask
+WORKDIR /webapp
+COPY . .
+EXPOSE 5000
+CMD ["python","./app/main.py"]
+

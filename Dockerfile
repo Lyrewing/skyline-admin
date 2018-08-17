@@ -1,6 +1,7 @@
 FROM python:3.6.6-alpine
 RUN pip install flask &&\
-    pip install tornado
+    pip install tornado &&\
+    pip install redis
 
 WORKDIR /webapp
 COPY . .

@@ -30,4 +30,4 @@ def get_token():
     else:
         return AuthFailed()
     return Response(response, mimetype="application/json")
-    pass
+

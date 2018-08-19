@@ -1,6 +1,7 @@
 import json
 from flask import Blueprint, Response
 from admin.models.user import User
+from admin.libs.authorize import authorize
 
 user = Blueprint("user", __name__)
 
@@ -17,6 +18,7 @@ def login():
     return Response(response, mimetype="application/json")
 
 
+@authorize
 @user.route("/add", methods=['POST'])
 def add_user():
     User.register_by_email("feng", "123456")

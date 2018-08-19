@@ -1,5 +1,5 @@
 import logging
-from admin import app
+from admin.app import app
 from tornado.wsgi import WSGIContainer
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
@@ -12,6 +12,7 @@ define('port', type=int, default=PORT)
 define('mode', default='debug')
 
 
+
 def main():
     # 注册的路由
     register_blueprints()
@@ -21,7 +22,6 @@ def main():
     logging.warn("[UOP] App is running on: http://localhost:%d", options.port)
     IOLoop.instance().start()
 
-"""
+
 if __name__ == "__main__":
     main()
-"""

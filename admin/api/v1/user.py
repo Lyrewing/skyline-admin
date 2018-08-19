@@ -18,8 +18,8 @@ def login():
     return Response(response, mimetype="application/json")
 
 
-@authorize
 @user.route("/add", methods=['POST'])
+@authorize
 def add_user():
     User.register_by_email("feng", "123456")
     _user = {'name': 'feng', 'age': 18}

@@ -26,7 +26,11 @@ def get_token():
         }
 
         token_key = jwt_encode(payload, header)
-        response = json.dumps({"data": token_key})
+        try:
+            token_data = {"data": token_key}
+            response = json.dumps(token_data)
+        except Exception as error:
+            raise error
     else:
         return AuthFailed()
     return Response(response, mimetype="application/json")

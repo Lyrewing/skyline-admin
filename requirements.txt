@@ -25,13 +25,10 @@ pefile==2018.8.8
 pluggy==0.7.1
 py==1.5.4
 pycparser==2.18
-PyInstaller==3.3.1
 PyMySQL==0.9.2
-pypiwin32==223
 pytest==3.7.2
 python-dateutil==2.7.3
 python-json-logger==0.1.9
-pywin32==223
 PyYAML==3.13
 redis==2.10.6
 s3transfer==0.1.13

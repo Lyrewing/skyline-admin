@@ -3,9 +3,6 @@ python:
   - "3.6"
 cache: pip
 install:
-  - pip install flask
-  - pip install tornado
-  - pip install redis
-  - pip install pytest
+  - pip install -r requirements.txt
 script:
-  - pytest
+  - pytest -v tests.py

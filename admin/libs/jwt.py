@@ -1,21 +1,18 @@
-import json
-from jwt import JWT, jwk_from_pem
-
-jwt = JWT()
+import jwt
 
 
-def get_token(message: dict) -> str:
+def jwt_encode(payload: dict,headers:dict) -> str:
     with open('rsa_private_key.pem', 'rb') as fh:
-        signing_key = jwk_from_pem(fh.read())
-    compact_jws = jwt.encode(message, signing_key, 'RS256')
+        signing_key = fh.read()
+    compact_jws = jwt.encode(payload,signing_key, 'RS256',headers=headers)
     return compact_jws
 
 
-def verify_token(compact_jws: str)->dict:
+def jwt_decode(compact_jws: str)->dict:
     with open('rsa_public_key.pem', 'rb') as fh:
-        verifying_key = jwk_from_pem(fh.read())
+        verifying_key = fh.read()
     try:
-        message = jwt.decode(compact_jws, verifying_key, 'RS256')
+        payload = jwt.decode(compact_jws, verifying_key, 'RS256')
     except Exception as err:
         raise err
-    return message
+    return payload

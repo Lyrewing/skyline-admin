@@ -1,6 +1,8 @@
-import json
+import json, time, datetime
 from flask import Blueprint, Response
 from admin.models.user import User
+from admin.libs.jwt import jwt_encode
+from admin.libs.error import AuthFailed
 
 token = Blueprint('token', __name__)
 
@@ -9,7 +11,23 @@ token = Blueprint('token', __name__)
 def get_token():
     result = User.verify("feng", "123456")
     if result:
-        token = ""
-    response = json.dumps({"data": token})
+        iat = time.time()
+        expire = (datetime.datetime.now() + datetime.timedelta(days=1)).timetuple()
+        exp = time.mktime(expire)
+        header = {
+            'iss': 'http://example.com/',
+            'sub': 'yosida95',
+            'iat': iat,
+            'exp': exp
+        }
+        payload = {
+            'name': "John",
+            'admin': True
+        }
+
+        token_key = jwt_encode(payload, header)
+        response = json.dumps({"data": token_key})
+    else:
+        return AuthFailed()
     return Response(response, mimetype="application/json")
     pass

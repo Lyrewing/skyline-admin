@@ -1,8 +1,5 @@
 FROM python:3.6.6-alpine
-RUN pip install flask &&\
-    pip install tornado &&\
-    pip install redis
-
+RUN pip install -r requirements.txt
 WORKDIR /webapp
 COPY . .
 EXPOSE 5000

@@ -40,12 +40,23 @@ class User(Base):
         session = scoped_session(Session)
         user = session.query(User).filter(User.name == "feng").first()
         password = md5(secret)
-        password_db=user.password
+        password_db = user.password
         if password_db == password:
             return True
         else:
             return False
-        pass
+
+    @staticmethod
+    def get_all_user():
+        session = scoped_session(Session)
+        user_objs = session.query(User).all()
+        users = []
+        for user in user_objs:
+            users.append(user.dict())
+        return users
+
+    def dict(self):
+        return {"id": self.id, "name": self.name, "age": self.age}
 
 
 Base.metadata.create_all(engine)

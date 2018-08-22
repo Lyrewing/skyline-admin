@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cd2861a2-1174-45d4-805c-fec7f26712f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/api/v1/token.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin/api/v1/token.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/api/v1/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin/api/v1/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/libs/jwt.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin/libs/jwt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/runserver.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +106,7 @@
     <session id="1805608432">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -138,12 +134,12 @@
         <counts>
           <entry key="dummy" value="1" />
           <entry key="py" value="1046" />
-          <entry key="txt" value="15" />
+          <entry key="txt" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="16" />
+          <entry key="PLAIN_TEXT" value="22" />
           <entry key="Python" value="1046" />
         </counts>
       </usages-collector>
@@ -157,8 +153,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/api/v1/token.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+            <state relative-caret-position="441">
+              <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -169,8 +165,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/api/v1/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="38" column="28" lean-forward="true" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+            <state relative-caret-position="264">
+              <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -202,8 +198,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/libs/jwt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="192">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -529,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534829490111</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="token">
+      <created>1534920984517</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1534920984517</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -542,8 +545,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="310" y="39" width="1449" height="968" extended-state="0" />
-    <editor active="true" />
+    <frame x="294" y="36" width="1449" height="968" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.18309858" />
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19691403" />
@@ -551,7 +553,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983193" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49855492" weight="0.31566548" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.29681978" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29681978" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49783236" weight="0.32217196" />
@@ -577,7 +579,8 @@
     <MESSAGE value="redis" />
     <MESSAGE value="route" />
     <MESSAGE value="json" />
-    <option name="LAST_COMMIT_MESSAGE" value="json" />
+    <MESSAGE value="token" />
+    <option name="LAST_COMMIT_MESSAGE" value="token" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -586,21 +589,6 @@
           <url>file://$PROJECT_DIR$/admin/models/user.py</url>
           <line>19</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/admin/api/v1/token.py</url>
-          <line>34</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/admin/api/v1/token.py</url>
-          <line>40</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/admin/libs/jwt.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/admin/libs/authorize.py</url>
@@ -868,16 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/libs/jwt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/jwt/api_jwt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
@@ -913,10 +891,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/libs/jwt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/api/v1/user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="38" column="28" lean-forward="true" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+        <state relative-caret-position="264">
+          <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -925,8 +913,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/api/v1/token.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        <state relative-caret-position="441">
+          <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>

@@ -17,3 +17,10 @@ class AlchemyEncoder(json.JSONEncoder):
             # a json-encodable dict
             return fields
         return json.JSONEncoder.default(self, obj)
+
+
+class AlchemyDictEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj.__class__, DeclarativeMeta):
+            return obj.dict()
+        return json.JSONEncoder.default(self, obj)

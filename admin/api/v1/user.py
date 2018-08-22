@@ -1,17 +1,14 @@
 import json
 from flask import Blueprint, Response
 from admin.models.user import User
-from flask_httpauth import HTTPBasicAuth
-from admin.libs.json import AlchemyEncoder
+
 user = Blueprint("user", __name__)
-auth = HTTPBasicAuth()
 
 
 @user.route("/get")
-@auth.login_required
 def get_user():
     users = User.get_all_user()
-    response = json.dumps(users,cls=AlchemyEncoder)
+    response = json.dumps(users)
     return Response(response, mimetype="application/json")
 
 
@@ -28,9 +25,3 @@ def add_user():
     _user = {'name': 'feng', 'age': 18}
     result = json.dumps(_user)
     return Response(result, mimetype="application/json")
-
-
-@auth.verify_password
-def verify_password(username, password):
-    result = User.verify(name=username, secret=password)
-    return result

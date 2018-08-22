@@ -1,5 +1,6 @@
 import jwt
 import os
+from jwt.exceptions import *
 
 
 def jwt_encode(payload: dict, headers: dict) -> str:
@@ -18,6 +19,10 @@ def jwt_decode(compact_jws: str) -> dict:
         verifying_key = fh.read()
     try:
         payload = jwt.decode(compact_jws, verifying_key, 'RS256')
-    except Exception as err:
-        raise err
+    except InvalidSignatureError as sig_error:
+        raise sig_error
+    except ExpiredSignatureError as exp_error:
+        raise exp_error
+    except Exception as error:
+        raise error
     return payload

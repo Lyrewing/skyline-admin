@@ -15,15 +15,17 @@ def get_token():
     result = User.verify("feng", "123456")
     if result:
         iat = time.time()
-        expire = (datetime.datetime.now() + datetime.timedelta(days=1)).timetuple()
+        expire = (datetime.datetime.now() + datetime.timedelta(minutes=1)).timetuple()
         exp = time.mktime(expire)
         header = {
+            "alg": "RS256",
+            "typ": "JWT"
+        }
+        payload = {
             'iss': 'http://example.com/',
             'sub': 'yosida95',
             'iat': iat,
-            'exp': exp
-        }
-        payload = {
+            'exp': exp,
             'name': "John",
             'admin': True
         }

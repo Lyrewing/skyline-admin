@@ -1,11 +1,16 @@
 import json
+import time
 from flask import Blueprint, Response
 from admin.models.user import User
+from flask_httpauth import HTTPTokenAuth
+from admin.libs.jwt import jwt_decode
 
 user = Blueprint("user", __name__)
+auth = HTTPTokenAuth(scheme='Bearer')
 
 
 @user.route("/get")
+@auth.login_required
 def get_user():
     users = User.get_all_user()
     response = json.dumps(users)
@@ -25,3 +30,13 @@ def add_user():
     _user = {'name': 'feng', 'age': 18}
     result = json.dumps(_user)
     return Response(result, mimetype="application/json")
+
+
+@auth.verify_token
+def verify_token(token):
+    if token:
+        try:
+            payload = jwt_decode(token)
+            return True
+        except Exception as error:
+            return False

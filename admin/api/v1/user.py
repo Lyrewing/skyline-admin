@@ -1,5 +1,4 @@
 import json
-import time
 from flask import Blueprint, Response
 from admin.models.user import User
 from flask_httpauth import HTTPTokenAuth

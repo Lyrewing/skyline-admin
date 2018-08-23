@@ -15,7 +15,9 @@ def get_weather(cityId, token):
     headers = {"Authorization": 'APPCODE ' + APPCODE,
                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
     r = requests.post(url, data=body, headers=headers)
-    print(r.content.decode(encoding="UTF-8"))
+    response = r.content.decode(encoding="UTF-8")
+    print(response)
+    print(json.loads(response))
 
 
 get_weather(2, "677282c2f1b3d718152c4e25ed434bc4")

@@ -15,6 +15,7 @@ devconfig==0.3.4
 docutils==0.14
 Flask==1.0.2
 Flask-HTTPAuth==3.2.4
+Flask-WTF==0.14.2
 future==0.16.0
 idna==2.7
 itsdangerous==0.24
@@ -41,3 +42,4 @@ SQLAlchemy==1.2.10
 tornado==5.1
 urllib3==1.23
 Werkzeug==0.14.1
+WTForms==2.2.1

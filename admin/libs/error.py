@@ -58,4 +58,7 @@ class AuthFailed(ApiException):
 
 
 class ParameterException(ApiException):
-    pass
+    code = 400
+    error_code = 10001
+    msg = "Parameter error"
+

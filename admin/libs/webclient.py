@@ -6,9 +6,9 @@ PATH = "/whapi/json/alicityweather/briefforecast3days"
 APPCODE = "70c6bc2c90ae456c8d82291b518376b8"
 
 
-def get_weather(cityId, token):
+def get_weather(city_id, token):
     body = {
-        "cityId": cityId,
+        "cityId": city_id,
         "token": token
     }
     url = HOST + PATH

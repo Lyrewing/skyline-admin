@@ -2,12 +2,17 @@ env:
   - DOCKER_USERNAME=fengzhanyuan
   - DOCKER_PASSWORD=fzy302525
 language: python
+services:
+  - docker
 python:
   - "3.6"
 cache: pip
+before_install:
+  - docker info
+  - docker ps -a
 install:
   - pip install -r requirements.txt
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 script:
   - pytest -v tests.py
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker version

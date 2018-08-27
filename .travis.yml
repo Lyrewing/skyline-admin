@@ -16,3 +16,7 @@ script:
   - pytest -v tests.py
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker version
+  - pwd
+  - docker build -t lyrewing/skyline-admin .
+  - docker push lyrewing/skyline-admin
+  - docker images

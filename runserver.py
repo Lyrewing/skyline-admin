@@ -5,7 +5,7 @@ from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
 from tornado.options import define, options
 
-PORT: int = 5555
+PORT: int = 5000
 define('port', type=int, default=PORT)
 # deploy
 define('mode', default='debug')

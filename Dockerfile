@@ -1,6 +1,6 @@
 FROM python:3.6.6-alpine
-RUN pip install -r requirements.txt
 WORKDIR /webapp
+RUN pip install -r requirements.txt
 COPY . .
 EXPOSE 5000
 CMD ["python","runserver.py"]

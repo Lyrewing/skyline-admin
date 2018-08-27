@@ -1,6 +1,6 @@
 env:
-  - DOCKER_USERNAME=fengzhanyuan
-  - DOCKER_PASSWORD=fzy302525
+  - DOCKER_PASSWORD=fzy302525 DOCKER_USERNAME=fengzhanyuan
+sudo: required
 language: python
 services:
   - docker

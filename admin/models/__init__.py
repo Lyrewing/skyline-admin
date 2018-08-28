@@ -3,12 +3,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+__ConnectionStr = 'mysql+pymysql://root:123456@192.168.33.10:3306/admin'
+
 _mysql_host = os.environ["MYSQL_HOST"]
 _mysql_port = os.environ["MYSQL_PORT"]
 _mysql_root_password = os.environ["MYSQL_ROOT_PASSWORD"]
 _mysql_db = os.environ["MYSQL_DB"]
-__ConnectionStr = 'mysql+pymysql://root:123456@192.168.33.10:33060/admin'
-
 __ConnectionStr = 'mysql+pymysql://{user}:{password}@{host}:{port}/{db}'.format(user='root',
                                                                                 password=_mysql_root_password,
                                                                                 host=_mysql_host,

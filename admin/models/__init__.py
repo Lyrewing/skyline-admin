@@ -12,7 +12,7 @@ _mysql_db = os.environ["MYSQL_DB"]
 __ConnectionStr = 'mysql+pymysql://{user}:{password}@{host}:{port}/{db}'.format(user='root',
                                                                                 password=_mysql_root_password,
                                                                                 host=_mysql_host,
-                                                                                ort=_mysql_port,
+                                                                                port=_mysql_port,
                                                                                 db=_mysql_db)
 
 Base = declarative_base()

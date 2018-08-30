@@ -1,6 +1,10 @@
 import uuid, time
 from vote.libs import redis
 
+ONE_WEEK_IN_SECONDS = 7 * 86400
+VOTE_SCORE = 5
+PAGE_SIZE = 10
+
 
 class Article:
     title = None
@@ -28,16 +32,18 @@ class Article:
         # 将时间写入到有序的集合中
         redis.zadd("time:", code, create_at)
         redis.zadd("score:", code, 0)
+
+        # 如果文章发布一周后讲voted进行删除
+
+        redis.expire("voted:" + code, ONE_WEEK_IN_SECONDS)
+
         return code
 
     @staticmethod
     def vote_article(code: str, user: str):
-        ONE_WEEK_IN_SECONDS = 7 * 86400
-        VOTE_SCORE = 5
         cutoff = time.time() - ONE_WEEK_IN_SECONDS
         if redis.zscore("time:", code) < cutoff:
             return
-
         skey = "voted:" + code
         if redis.sadd(skey, user):
             redis.zincrby("score:", code, amount=VOTE_SCORE)
@@ -46,13 +52,13 @@ class Article:
 
     @staticmethod
     def get_articles(page_index):
-        PAGE_SIZE = 10
         start = (page_index - 1) * PAGE_SIZE
         end = start + PAGE_SIZE - 1
         ids = redis.zrevrange("score:", start, end)
         articles = []
         for id in ids:
-            article_data = redis.hgetall(id)
+            id = id.decode(encoding="UTF-8")
+            article_data = redis.hgetall("article:" + id)
             article_data['id'] = id
             articles.append(article_data)
         return articles

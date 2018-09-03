@@ -1,5 +1,5 @@
 import uuid, time
-from vote.libs import redis
+from vote import redis
 
 ONE_WEEK_IN_SECONDS = 7 * 86400
 VOTE_SCORE = 5

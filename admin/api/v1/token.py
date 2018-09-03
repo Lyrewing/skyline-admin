@@ -41,6 +41,9 @@ def get_token():
     return Response(response, mimetype="application/json")
 
 
+
+
+
 @auth.verify_password
 def verify_password(username, password):
     result = User.verify(name=username, secret=password)

@@ -1,4 +1,4 @@
-from vote.libs import redis
+from vote import redis
 
 
 def hits():

@@ -8,6 +8,7 @@ python:
   - "3.6"
 cache: pip
 before_install:
+  - sudo apt-get install sshpass
   - docker info
   - docker ps -a
 install:
@@ -20,3 +21,6 @@ script:
   - docker build -t lyrewing/skyline-admin:1.0 .
   - docker push lyrewing/skyline-admin:1.0
   - docker images
+  - sshpass -p "$SSHPASSWORD" ssh dc2-user@116.85.24.98
+  - ls -a
+  

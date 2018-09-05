@@ -21,6 +21,8 @@ script:
   - docker build -t lyrewing/skyline-admin:1.0 .
   - docker push lyrewing/skyline-admin:1.0
   - docker images
-  - sshpass -p "$SSH_PASSWORD" ssh dc2-user@116.85.24.98
-  - ls -a
+  - sshpass -p "$SSH_D" ssh dc2-user@$HOST
+  - sudo docker rmi -f lyrewing/skyline-admin:1.0
+  - sudo docker pull lyrewing/skyline-admin:1.0
+  - sudo docker run -d -p 80:5000 --name=admin_web -e MYSQL_HOST=admin_db -e MYSQL_PORT=3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DB=admin --network=admin_bridge lyrewing/skyline-admin:1.0
   

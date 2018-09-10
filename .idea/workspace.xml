@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cd2861a2-1174-45d4-805c-fec7f26712f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/api/v1/token.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin/api/v1/token.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/api/v1/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin/api/v1/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/libs/error.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin/libs/error.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin/models/user.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +208,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/api/v1/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
+            <state relative-caret-position="969">
               <caret line="51" column="20" lean-forward="true" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -388,9 +382,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="37" />
+    <option name="y" value="58" />
     <option name="width" value="1400" />
     <option name="height" value="1123" />
   </component>
@@ -802,7 +796,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536074660048</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Merge branch 'master' of github.com:BMW-Hood/skyline-admin&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1536597640120</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1536597640120</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView">
@@ -815,16 +816,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="37" y="58" width="1400" height="1123" extended-state="0" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.19470978" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.10445408" />
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19691403" />
       <window_info id="Favorites" order="2" sideWeight="0.50066227" side_tool="true" weight="0.19691403" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983193" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49855492" weight="0.32317072" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.4745935" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.36570087" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49783236" weight="0.3211382" />
@@ -1269,7 +1270,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/api/v1/user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
+        <state relative-caret-position="969">
           <caret line="51" column="20" lean-forward="true" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />

@@ -62,3 +62,8 @@ class ParameterException(ApiException):
     error_code = 10001
     msg = "Parameter error"
 
+
+class ServerException(ApiException):
+    code = 500
+    error_code = 10005
+    msg = "server error"

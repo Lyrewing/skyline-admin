@@ -7,8 +7,8 @@ from sqlalchemy.orm import scoped_session
 class User(Base):
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
-    name = Column(String(64), nullable=False, index=True)
-    age = Column(Integer, nullable=True, index=False)
+    email = Column(String(64), nullable=False, index=True)
+    phone = Column(String(64), nullable=True, index=False)
     _password = Column('password', String(100))
 
     @property
@@ -20,11 +20,11 @@ class User(Base):
         self._password = md5(raw)
 
     @staticmethod
-    def register_by_email(name, secret):
+    def register_by_email(email, secret,phone):
         session = scoped_session(Session)
         user = User()
-        user.name = name
-        user.age = 19
+        user.email = email
+        user.phone = phone
         user.password = secret
         try:
             session.add(user)
@@ -36,9 +36,9 @@ class User(Base):
         return '%s(%r)' % (self.__class__.__name__, self.name)
 
     @staticmethod
-    def verify(name: str, secret: str) -> bool:
+    def verify(email: str, secret: str) -> bool:
         session = scoped_session(Session)
-        user = session.query(User).filter(User.name == "feng").first()
+        user = session.query(User).filter(User.email == email).first()
         password = md5(secret)
         password_db = user.password
         if password_db == password:
@@ -56,7 +56,7 @@ class User(Base):
         return users
 
     def dict(self):
-        return {"id": self.id, "name": self.name, "age": self.age}
+        return {"id": self.id, "email": self.email, "phone": self.phone}
 
 
 Base.metadata.create_all(engine)

@@ -5,8 +5,10 @@ from admin.config import DevConfig
 from admin.api.v1.book import book
 from admin.api.v1.user import user
 from admin.api.v1.token import token
+from flask_cors import *
 
 app = Flask(__name__)
+CORS(app, supports_credentials=True)
 # 设置环境配置
 app.config.from_object(DevConfig)
 

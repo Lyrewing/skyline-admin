@@ -39,10 +39,13 @@ class User(Base):
     def verify(email: str, secret: str) -> bool:
         session = scoped_session(Session)
         user = session.query(User).filter(User.email == email).first()
-        password = md5(secret)
-        password_db = user.password
-        if password_db == password:
-            return True
+        if user:
+            password = md5(secret)
+            password_db = user.password
+            if password_db == password:
+                return True
+            else:
+                return False
         else:
             return False
 

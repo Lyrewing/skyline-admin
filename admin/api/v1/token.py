@@ -1,7 +1,7 @@
 import json, time, datetime
-from flask import Blueprint, Response
+from flask import Blueprint, Response, request
 from admin.models.user import User
-from admin.libs.jwt import jwt_encode
+from admin.libs.jwt import jwt_encode, jwt_decode
 from admin.libs.error import AuthFailed, Success, ServerException
 from flask_httpauth import HTTPBasicAuth
 
@@ -35,6 +35,19 @@ def get_token():
         return Response(response, mimetype="application/json")
     except Exception as error:
         return ServerException(error)
+
+
+@token.route("/check", methods=['POST'])
+def verify_token():
+    token_value = request.json['token']
+    if token_value:
+        try:
+            payload = jwt_decode(token_value)
+            flg = True
+        except Exception as error:
+            flg = False
+        result = json.dumps({'result': flg})
+        return Response(result, mimetype="application/json")
 
 
 @auth.verify_password

@@ -2,9 +2,9 @@ from admin.libs.error import ApiException
 from werkzeug.exceptions import HTTPException
 from flask import Flask
 from admin.config import DevConfig
-from admin.api.v1.book import book
 from admin.api.v1.user import user
 from admin.api.v1.token import token
+from vote.api.votes import votes
 from flask_cors import *
 
 app = Flask(__name__)
@@ -14,8 +14,8 @@ app.config.from_object(DevConfig)
 
 # 注册的路由
 app.register_blueprint(user, url_prefix="/v1/user")
-app.register_blueprint(book, url_prefix="/v1/book")
 app.register_blueprint(token, url_prefix="/v1/token")
+app.register_blueprint(votes,url_prefix="/v1/vote")
 
 
 # 全局异常过滤器

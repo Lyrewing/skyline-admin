@@ -21,11 +21,11 @@ class Article:
         self.votes = 0
 
     @staticmethod
-    def add_article(title, link, poster):
+    def add_article(name, author, summary, cover):
         # 添加文章
         code = str(uuid.uuid1())
         create_at = time.time()
-        article = {"title": title, "link": link, "poster": poster, "time": create_at, "votes": 0}
+        article = {"name": name, "author": author, "summary": summary, "cover": cover, "time": create_at, "votes": 0}
         hkey = "article:" + code
         redis.hmset(hkey, article)
 
@@ -34,9 +34,7 @@ class Article:
         redis.zadd("score:", code, 0)
 
         # 如果文章发布一周后讲voted进行删除
-
         redis.expire("voted:" + code, ONE_WEEK_IN_SECONDS)
-
         return code
 
     @staticmethod

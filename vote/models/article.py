@@ -56,7 +56,13 @@ class Article:
         articles = []
         for id in ids:
             id = id.decode(encoding="UTF-8")
-            article_data = redis.hgetall("article:" + id)
-            article_data['id'] = id
+            data = redis.hgetall("article:" + id)
+            name = str(data[b'name'], encoding="utf-8")
+            summary = str(data[b'summary'], encoding="utf-8")
+            cover = str(data[b'cover'], encoding="utf-8")
+            author = str(data[b'author'], encoding="utf-8")
+            votes = int(data[b'votes'])
+            article_data = {"id": id, "name": name, "summary": summary, "cover": cover, "author": author,
+                            "votes": votes}
             articles.append(article_data)
         return articles

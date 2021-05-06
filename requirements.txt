@@ -14,7 +14,7 @@ cryptography==2.3.1
 devconfig==0.3.4
 docutils==0.14
 Flask==1.0.2
-Flask-Cors==3.0.6
+Flask-Cors==3.0.9
 Flask-HTTPAuth==3.2.4
 Flask-WTF==0.14.2
 future==0.16.0
